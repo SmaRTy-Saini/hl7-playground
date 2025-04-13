@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HL7 Playground - SmaRTy Saini Corp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>HL7 Playground</h1>
+    <label>Select Template:
+        <select id="templateSelect" onchange="loadTemplate()">
+            <option value="">--Choose--</option>
+            <option value="ADT">ADT^A01</option>
+            <option value="ORM">ORM^O01</option>
+        </select>
+    </label><br><br>
+
+    <textarea id="hl7Input" placeholder="Paste or select HL7 message here..."></textarea>
+    <button onclick="visualize()">Visualize</button>
+    <button onclick="simulateSend()">Send via MLLP (Simulated)</button>
+    <button onclick="saveToLocal()">Save</button>
+    <button onclick="loadFromLocal()">Load</button>
+
+    <h3>Parsed HL7 Message:</h3>
+    <div id="parsedOutput"></div>
+
+    <h3>ACK Response:</h3>
+    <pre id="ackOutput"></pre>
+
+    <script src="script.js"></script>
+</body>
+</html>
